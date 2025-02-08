@@ -56,7 +56,7 @@
                     class="w-full inline-flex shrink-0 items-center gap-x-2 p-2 text-start text-sm text-gray-800 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                     aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
                     <img class="shrink-0 size-5 rounded-full"
-                        src="https://images.unsplash.com/photo-1734122415415-88cb1d7d5dc0?q=80&w=320&h=320&auto=format&fit=facearea&facepad=3&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('image/default-user-preview.png') }}"
                         alt="Avatar">
                     {{-- Mia Hudson --}}
                     {{ Auth::user()->name }}
