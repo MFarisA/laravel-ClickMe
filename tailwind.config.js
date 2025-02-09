@@ -9,6 +9,7 @@ export default {
         './resources/**/*.js',
         './resources/**/*.vue',
         'node_modules/preline/dist/*.js', // Tambahkan Preline UI
+        "./node_modules/flowbite/**/*.js",
     ],
     theme: {
         extend: {
@@ -16,9 +17,14 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 roboto: ['Roboto', 'sans-serif'],
             },
+            colors: {
+                'exo-purple': '#6347EA',
+                'exo-red': "#D21E24",
+            },
         },
     },
     plugins: [
         require('preline/plugin'), // Tambahkan plugin Preline
+        require('flowbite/plugin'),
     ],
 };
