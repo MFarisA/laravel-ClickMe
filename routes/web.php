@@ -30,12 +30,18 @@ Route::get('/space/{id}', [SpaceController::class, 'show'])->name('space.show');
 Route::post('/space', [SpaceController::class, 'store'])->name('space.store');
 
 // update-profile-setting
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'preventBackHistory'])->group(function () {
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
-Route::get('/setting', function () {
-    return view('setting');
+Route::get('/accountSetting', function () {
+    return view('accountSetting');
 }) ;
 
+Route::get('/calendar', function () {
+    return view('calendar');
+}) ;
 
+Route::get('/kanban', function () {
+    return view('kanban');
+}) ;
